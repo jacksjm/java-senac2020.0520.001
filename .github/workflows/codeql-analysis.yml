@@ -67,7 +67,9 @@ jobs:
         java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
         architecture: x64 # (x64 or x86) - defaults to x64
     
-    - run: java -cp java Banco
+    - run: |
+        javac Banco.java
+        java Banco
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
